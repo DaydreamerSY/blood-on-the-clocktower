@@ -1,0 +1,8 @@
+TextureRect
+Button
+Node2D
+Control
+Label
+CollisionShape2D
+Area2D
+ItemList

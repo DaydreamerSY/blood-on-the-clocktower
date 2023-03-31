@@ -1,0 +1,4 @@
+res://Scence.tscn
+res://Component/SupportToken.tscn
+res://Component/Token.tscn
+res://Script/Scence.gd

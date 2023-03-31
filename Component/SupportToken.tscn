@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://duyhrvhdq1kt1"]
+
+[ext_resource type="Script" path="res://Script/TokenBehavior.gd" id="1_wvotl"]
+[ext_resource type="Texture2D" uid="uid://by05ds6epul7x" path="res://Asset/bg_avatar.png" id="2_kfv3s"]
+[ext_resource type="Texture2D" uid="uid://cy8hjlghnnq6s" path="res://Asset/TroubleBrewing/Icon_washerwoman.png" id="3_jiwjj"]
+[ext_resource type="FontFile" uid="uid://vcb0sufur7w" path="res://MilkyNice.ttf" id="4_31b6w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfclb"]
+radius = 44.0
+
+[node name="SupportToken" type="Node2D"]
+position = Vector2(50, 50)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_wvotl")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -43.5
+offset_right = 43.5
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kfv3s")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RoleAvatar" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jiwjj")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_nfclb")
+
+[node name="RoleName" type="Label" parent="."]
+offset_left = -98.0
+offset_top = 40.0
+offset_right = 2.0
+offset_bottom = 66.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("4_31b6w")
+text = "Role"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
